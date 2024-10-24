@@ -14,7 +14,7 @@
         <div class="card">
             <div class="card-header">Inicia sesion</div>
             <div class="card-body">
-                <form id="iniciarSesion">
+                <form action="/iniciarSesion" method="post" id="iniciarSesion">
                     <div class="mb-3">
                     <label for="email" class="form-label">Correo electronico</label>
                     <input type="email" class="form-control" id="email" name="email" aria-describedby="emailHelp">
@@ -27,25 +27,40 @@
                     <input type="checkbox" class="form-check-input" id="checkMe">
                     <label class="form-check-label" for="checkMe">Recuerdame</label>
                     </div>
-                    <button type="submit" class="btn btn-primary">Eviar</button>
+                    <button type="submit" class="btn btn-primary">Iniciar sesion</button>
                 </form>
             </div>
         </div>
     </div>
 
-    <script>
+    <!-- <script>
         document.getElementById("iniciarSesion").addEventListener("submit", function(event) {
             event.preventDefault()
             const formData = new FormData(this);
                 const data = {
                     email: document.getElementById("email").value,
-                    password: document.getElementById("ppassword").value
+                    password: document.getElementById("password").value
                 };
 
-            console.log(data);
-        });
+                console.log("Datos a enviar: " + data.email + " " + data.password);
 
-    </script>
+                fetch('http://localhost:9001/auth/autenticacion', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(data)
+                })
+                .then(response => response.json())
+                .then(data => {
+                    console.log('Inicio de sesion exitoso:', data);
+                    // alert('Cita agendada con éxito');
+                })
+                .catch(error => {
+                    console.error('Error al iniciar sesion:', error);
+                    // alert('Error al agendar la cita');
+                });
+            });
+
+    </script> -->
 
 </body>
 </html>
