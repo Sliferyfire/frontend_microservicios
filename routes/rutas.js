@@ -6,7 +6,7 @@ ruta.get("/", (req,res)=>{
 
 ruta.post("/iniciarSesion", (req,res)=>{
     // console.log("Datos a enviar: " + req.body.email + " " + req.body.password);
-    fetch('http://localhost:9001/auth/authentication/signIn', {
+    fetch('https://api-gateway-indol.vercel.app/auth/authentication/signIn', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(req.body)
@@ -28,7 +28,7 @@ ruta.get("/registrarCuenta", (req,res)=>{
 
 ruta.post("/registrarCuenta", (req,res)=>{
     console.log("Datos a enviar: " + req.body.email + " " + req.body.password);
-    fetch('http://localhost:9001/auth/authentication/signUp', {
+    fetch('https://api-gateway-indol.vercel.app/auth/authentication/signUp', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(req.body)
@@ -45,7 +45,7 @@ ruta.post("/registrarCuenta", (req,res)=>{
 }) 
 
 ruta.get("/inicio", (req,res) =>{
-    fetch('http://localhost:9001/agendar/mostrarCitas', {
+    fetch('https://api-gateway-indol.vercel.app/agendar/mostrarCitas', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' }
     })
@@ -66,7 +66,7 @@ ruta.get("/agendar", (req,res)=>{
 
 ruta.post("/agendarCita", (req,res)=>{
     // console.log(req.body);
-    fetch('http://localhost:9001/agendar/nuevacita', {
+    fetch('https://api-gateway-indol.vercel.app/agendar/nuevacita', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(req.body)
@@ -83,7 +83,7 @@ ruta.post("/agendarCita", (req,res)=>{
 })
 
 ruta.get("/editar/:id", (req,res)=>{
-    fetch(`http://localhost:9001/agendar/buscarPorID/${req.params.id}`, {
+    fetch(`https://api-gateway-indol.vercel.app/agendar/buscarPorID/${req.params.id}`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' }
     })
@@ -99,7 +99,7 @@ ruta.get("/editar/:id", (req,res)=>{
 })
 
 ruta.post("/editar", (req,res)=>{
-    fetch(`http://localhost:9001/agendar/editar`, {
+    fetch(`https://api-gateway-indol.vercel.app/agendar/editar`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(req.body)
@@ -116,7 +116,7 @@ ruta.post("/editar", (req,res)=>{
 })
 
 ruta.get("/borrar/:id", (req,res)=>{
-    fetch(`http://localhost:9001/agendar/borrar/${req.params.id}`, {
+    fetch(`https://api-gateway-indol.vercel.app/agendar/borrar/${req.params.id}`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' }
     })
