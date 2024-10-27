@@ -1,0 +1,23 @@
+<%- include("./templates/encabezado")%>
+    <%- include("./templates/navbar")%>
+
+    <div class="container mt-5">
+    <form action="/editar" method="post">
+        <div class="card">
+            <div class="card-header">
+                <h1>Modificar registros</h1>
+            </div>
+            <div class="card-body">
+                <input type="hidden" name="id" value="<%= cita.id%>">
+                <input class="form-control mb-3" type="text" value="<%= cita.nombre%>" name="nombre" id="nombre" placeholder="Nombre" autofocus required>
+                <input class="form-control mb-3" type="text" value="<%= cita.motivo%>" name="motivo" id="motivo" placeholder="Motivo" required>
+                <input class="form-control mb-3" type="date" value="<%= cita.fecha%>" name="fecha" id="fecha" placeholder="Fecha" required>
+            </div>
+            <div class="card-footer">
+                <button type="submit" class="form-control btn btn-primary" > Modificar registros</button>
+            </div>
+        </div>
+    </form>
+    </div>
+
+<%- include("./templates/pie")%>

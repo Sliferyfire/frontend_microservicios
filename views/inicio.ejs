@@ -1,11 +1,47 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Inicio</title>
-</head>
-<body>
-    <h1>XDDDD</h1>
-</body>
-</html>
+<%- include("./templates/encabezado")%>
+    <%- include("./templates/navbar")%>
+
+    <div class="container mt-5">
+        <div class="card">
+            <div class="card-header">
+                <h1>Registro de citas</h1>
+            </div>
+            <div class="card-body">
+                <table class="table table-hover">
+                    <thead>
+                        <tr>
+                            <th>Id</th>
+                            <th>Nombre</th>
+                            <th>Motivo</th>
+                            <th>Fecha</th>
+                            <th>Editar | Borrar</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <%
+                            citas.forEach((cita)=>{
+    
+                            
+                        %>
+                        <tr>
+                            <td><%= cita.id %></td>
+                            <td><%= cita.nombre %></td>
+                            <td><%= cita.motivo %></td>
+                            <td><%= cita.fecha %></td>
+                            <td>
+                                <a href="/editar/<%= cita.id %>">Editar</a>
+                                <a href="/borrar/<%= cita.id %>">Borrar</a>
+                            </td>
+                        </tr>
+                        
+                        <%
+                        });
+                        %>
+                    </tbody>
+                </table>
+            </div>
+            <div class="card-footer"></div>
+        </div>
+    </div>
+
+<%- include("./templates/pie")%>
