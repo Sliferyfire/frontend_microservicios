@@ -42,7 +42,7 @@ ruta.post("/registrarCuenta", (req,res)=>{
         console.error('Error al registrar cuenta:', error);
         res.redirect("/registrarCuenta");
     });
-})
+}) 
 
 ruta.get("/inicio", (req,res) =>{
     fetch('http://localhost:9001/agendar/mostrarCitas', {
